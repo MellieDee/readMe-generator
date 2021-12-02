@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/MellieDee/readMe-generator/issues"
   },
-  "homepage": "https://github.com/MellieDee/readMe-generator#readme"
+  "homepage": "https://github.com/MellieDee/readMe-generator#readme",
+  "devDependencies": {
+    "jest": "^27.4.3"
+  }
 }
