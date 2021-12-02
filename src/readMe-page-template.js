@@ -1,17 +1,80 @@
 //create the README title
-const generateReadMeTemp = data => {
+const generateReadMeTemp = dataA => {
 return `
-# ${data.title}
+# ${dataA.title}
 ***
+
 &nbsp;
+
+## Project Description
+ ${dataA.description}
+***
+
+&nbsp;
+
+## Installation Instructions
+***
+${dataA.install}
+
+&nbsp;
+
+
+## Usage
+***
+${dataA.usage}
+
+&nbsp;
+
+
 `;
 }
 
 
 
-// function generateMarkdown(data) {
-//   return `# ${data.title}
 
-// `;
+
+
+
+
+
+
+
+
+// TODO: Create a function that returns a license badge based on which license is passed in
+// // If there is no license, return an empty string
+ function renderLicenseBadge(license) {
+
 // }
-module.exports =  generateReadMeTemp 
+
+// // TODO: Create a function that returns the license link
+// // If there is no license, return an empty string
+function renderLicenseLink(license) {}
+
+// // TODO: Create a function that returns the license section of README
+// // If there is no license, return an empty string
+ function renderLicenseSection(license) {}
+
+
+
+
+
+
+module.exports =   generateReadMeTemp
+
+
+
+
+
+
+
+
+
+// const generateReadMeUrl = (dataA, dataB) => {
+//   return `
+// ## ${dataA.title} URL
+// Deploy at *[${dataA.title}](${dataB.url})*
+
+// &nbsp;
+// `;
+
+// }

@@ -31,50 +31,86 @@ const readMeInforPrompt = () => {
           }
         }
       },
-      // ** GitHub userNAME **
+      // ** Description**
       {
         type: 'input',
-        name: 'githubUserName',
-        message: 'What is your Github Username? (Required)',
-        validate: nameInput => {
-          if (nameInput) {
+        name: 'description',
+        message: 'Please provide a description of your project or its purpose. For example, what problem does it solve and how did you solve it? (Required)',
+        validate: descriptionInput => {
+          if (descriptionInput) {
             return true;
           } else {
-            console.log('Please enter your username!');
+            console.log("Please enter your project's description!");
+            return false;
+          }
+        }
+      },
+
+      // ** Installation Instructions
+      {
+        type: 'input',
+        name: 'install',
+        message: 'Please tell readers how to install or run your program. (Required)',
+        validate: installInput => {
+          if (installInput) {
+            return true;
+          } else {
+            console.log("Please tell readers how to install or run your program.");
+            return false;
+          }
+        }
+      },
+
+
+      // ** Usage
+      {
+        type: 'input',
+        name: 'usage',
+        message: 'Please tell readers how to use your program and if there are any special features. (Required)',
+        validate: usageInput => {
+          if (usageInput) {
+            return true;
+          } else {
+            console.log("Want folks to use this? Then tell them how!.");
             return false;
           }
         }
       },
     ])
-    .then(data => {
+    .then(dataA => {
       // readMeData.project.push(answers);
       // console.log(data);
-      return data;
+      return dataA;
     })
 };
 
 
-readMeInforPrompt()
-.then(data => {
-return generateReadMeTemp(data)
-})
-.then(readMe => {
-  return writeFile(readMe)
-})
 
-// .then(data => {
-//   return generateTitle(data)
-// })
-// .then(pageReadMe => {
-//   return writeFile(pageReadMe)
-// })
-// .then(writeFileResponse => {
-//   console.log(writeFileResponse)
-//   return copyFile();
-// })
-// .catch (err => {
-//   console.log(err);
-// });
+// ** GitHub userNAME **
+// {
+//   type: 'input',
+//   name: 'githubUserName',
+//   message: 'What is your Github Username? (Required)',
+//   validate: nameInput => {
+//     if (nameInput) {
+//       return true;
+//     } else {
+//       console.log('Please enter your username!');
+//       return false;
+//     }
+//   }
+// },
+
+readMeInforPrompt()
+  .then(dataA => {
+    return generateReadMeTemp(dataA)
+  })
+  .then(readMe => {
+    return writeFile(readMe)
+  })
+  .catch(err => {
+    console.log(err);
+  });
 
 
 
@@ -147,3 +183,36 @@ return generateReadMeTemp(data)
 // };
 
 // console.log(generateReadMe('Me', 'read'));
+
+
+
+
+
+
+
+
+
+
+// // ** URL if applicable
+// const readMeUrlPrompt = () => {
+//   return inquirer
+//     .prompt([
+//       {
+//         type: 'confirm',
+//         name: 'confirmUrl',
+//         message: 'Does your project have a deployment URL?',
+//         default: true
+//       },
+//       {
+//         type: 'input',
+//         name: 'url',
+//         message: 'Enter the URL to your project if there is one.',
+//         when: ({ confirmUrl }) => confirmUrl
+//       },
+//     ])
+//     .then(dataB => {
+//       // readMeData.project.push(answers);
+//       // console.log(data);
+//       return dataB;
+//     })
+//   };
