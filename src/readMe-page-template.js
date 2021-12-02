@@ -1,5 +1,5 @@
 //create the README title
-const generateTitle = data => {
+const generateReadMeTemp = data => {
 return `
 # ${data.title}
 ***
@@ -14,4 +14,4 @@ return `
 
 // `;
 // }
-module.exports = generateTitle
+module.exports =  generateReadMeTemp 

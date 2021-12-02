@@ -1,11 +1,11 @@
 //TODO: Include packages needed for this application
 
 //Packages Used
-const fs = require('fs');
+// const fs = require('fs');
 const inquirer = require('inquirer');
-const { writeFile } = require('./utils/generateMarkdown')
-const generateTitle = require('./src/readMe-page-template')
-// const generatePage = require('./utils/generateMarkdown');
+const generateReadMeTemp = require('./src/readMe-page-template');
+const { writeFile } = require('./utils/generateMarkdown');
+
 
 // TODO: Create an array of questions for user input
 // functionName = (param -paren optional if only 1 Param-) => {}
@@ -15,7 +15,7 @@ const readMeInforPrompt = () => {
   //   readMeData.responses [];
   // }
   //  return readMeData
-  inquirer
+  return inquirer
     .prompt([
       // ** Project TITLE **
       {
@@ -36,17 +36,17 @@ const readMeInforPrompt = () => {
         type: 'input',
         name: 'githubUserName',
         message: 'What is your Github Username? (Required)',
-        // validate: nameInput => {
-        //   if (nameInput) {
-        //     return true;
-        //   } else {
-        //     console.log('Please enter your username!');
-        //     return false;
-        //   }
-        // }
+        validate: nameInput => {
+          if (nameInput) {
+            return true;
+          } else {
+            console.log('Please enter your username!');
+            return false;
+          }
+        }
       },
     ])
-    .then((data) => {
+    .then(data => {
       // readMeData.project.push(answers);
       // console.log(data);
       return data;
@@ -56,7 +56,7 @@ const readMeInforPrompt = () => {
 
 readMeInforPrompt()
 .then(data => {
-return generageMarkdown(data)
+return generateReadMeTemp(data)
 })
 .then(readMe => {
   return writeFile(readMe)
