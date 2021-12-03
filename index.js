@@ -62,7 +62,7 @@ const readMeInforPrompt = () => {
       },
 
 
-      // ** Usage
+      // ** Usage **
       {
         type: 'input',
         name: 'usage',
@@ -76,12 +76,33 @@ const readMeInforPrompt = () => {
           }
         }
       },
+
+      // ** License **
+      {
+        type: 'list',
+        name: 'license',
+        message: 'Pick ONE license.',
+        choices: ['GNU GPL 3.0', 'GNU LGPL 3.0', 'Mozilla Public 2.0', 'Apache 2.0', 'MIT', 'Boost Software 1.0', 'The Unlicense']
+        //the name is going to be the variable - so 
+        //checkbox or list data.
+      }
     ])
-    .then(dataA => {
+    .then(data => {
       // readMeData.project.push(answers);
+
       // console.log(data);
-      return dataA;
+      return data;
     })
+    // .then(data => {
+    //   if ((data.license.toLowerCase()) === "gnu gpl 3.0") {
+    //     var licenseUrl = "https://choosealicense.com/licenses/agpl-3.0/";
+    //     return licenseUrl
+    //   } else {
+    //     var licenseUrl = "https://choosealicense.com/licenses/apache-2.0/";
+    //     return licenseUrl
+    //   }
+    // })
+
 };
 
 
@@ -102,8 +123,8 @@ const readMeInforPrompt = () => {
 // },
 
 readMeInforPrompt()
-  .then(dataA => {
-    return generateReadMeTemp(dataA)
+  .then(data => {
+    return generateReadMeTemp(data)
   })
   .then(readMe => {
     return writeFile(readMe)
@@ -115,7 +136,13 @@ readMeInforPrompt()
 
 
 
+// //*********** expressions in TL
+// const age = 19
+// const message = `You can ${age < 21 ? 'not' : ''} view this page`
+// console.log(message) */
 
+// const func = () => 'Hello'
+// console.log(`${func()} World`)
 
 
     // // ** NAME **

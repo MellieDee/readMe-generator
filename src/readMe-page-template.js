@@ -1,30 +1,43 @@
 //create the README title
-const generateReadMeTemp = dataA => {
-return `
-# ${dataA.title}
+// const licenseLink = require("./utils/license")
+
+
+
+const generateReadMeTemp = (data, licenseUrl) => {
+  return `
+# **${data.title}**
+
+&nbsp;
+<img src="https://img.shields.io/badge/license-${data.license.replace(/ /g, "_")}-blue.svg">
+
+&nbsp
+***
+
+## **Project Description**
+ ${data.description}
 ***
 
 &nbsp;
 
-## Project Description
- ${dataA.description}
+## **Installation Instructions**
 ***
-
-&nbsp;
-
-## Installation Instructions
-***
-${dataA.install}
+${data.install}
 
 &nbsp;
 
 
-## Usage
+## **Usage**
 ***
-${dataA.usage}
+${data.usage}
 
 &nbsp;
 
+
+### **License**
+***
+Licensed under [${data.license}](${licenseUrl}) license.
+
+&nbsp;
 
 `;
 }
@@ -35,31 +48,33 @@ ${dataA.usage}
 
 
 
+  //Licensed under [${data.license}](https://choosealicense.com/licenses/${data.license.toLowerCase().replace(/ /g, "-")}/) license.
+
+
+
+
+  // // TODO: Create a function that returns a license badge based on which license is passed in
+  // // // // If there is no license, return an empty string
+  //   function renderLicenseBadge(data.license) {
+
+  //  }
+
+  // // // TODO: Create a function that returns the license link
+  // // // If there is no license, return an empty string
+  // function renderLicenseLink(data.license) {
+
+  // }
+
+  // // // TODO: Create a function that returns the license section of README
+  // // // If there is no license, return an empty string
+  //  function renderLicenseSection(data.license) {}
 
 
 
 
 
-// TODO: Create a function that returns a license badge based on which license is passed in
-// // If there is no license, return an empty string
- function renderLicenseBadge(license) {
 
-// }
-
-// // TODO: Create a function that returns the license link
-// // If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// // TODO: Create a function that returns the license section of README
-// // If there is no license, return an empty string
- function renderLicenseSection(license) {}
-
-
-
-
-
-
-module.exports =   generateReadMeTemp
+  module.exports = generateReadMeTemp
 
 
 

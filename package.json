@@ -4,7 +4,7 @@
   "description": "[How to create a Professional README](./readme-guide.md)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "md",
   "license": "ISC",
