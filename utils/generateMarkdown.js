@@ -1,4 +1,4 @@
-// TODO: Create a function to generate markdown file
+// TODO: Create a function to generate markdown README file
 const fs = require('fs');
 // const { resolve } = require('path');
 
