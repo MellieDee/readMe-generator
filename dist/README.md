@@ -1,5 +1,5 @@
 
-# **adg**
+# **asg**
 &nbsp;
 
 <img src="https://img.shields.io/badge/license-GNU _GPL _3.0-blue.svg">
@@ -27,7 +27,7 @@ adg
 
 ## **Installation**
 ***
-adgasg
+asgadg
 
 &nbsp;
 
@@ -62,15 +62,15 @@ No tests at this time.
 
 ### **Questions**
 ***
-Reach me directly at  asfg </br>  
-Or checkout out my GitHub profile:  [github.com/me](https://github.com/me)
+Reach me directly at  asg </br>  
+Or checkout out my GitHub profile:  [github.com/melliedee](https://github.com/melliedee)
 
 &nbsp;
 
 
 ### **License**
 ***
-Copyright (c) md. Licensed under the [GNU GPL 3.0](https://choosealicense.com/licenses) license.
+Copyright (c) ms. Licensed under the [GNU GPL 3.0](https://choosealicense.com/licenses) license.
 
 &nbsp;
 
