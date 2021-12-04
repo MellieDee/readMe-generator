@@ -5,7 +5,7 @@
 const inquirer = require('inquirer');
 const { writeFile } = require('./utils/generateMarkdown.js');
 const generateReadMeTemp = require('./src/readMe-page-template.js');
-const generateCredits = require('./src/readMe-page-template.js');
+
 
 
 
@@ -96,7 +96,7 @@ const readMeInfoPrompt = () => {
       {
         type: 'input',
         name: 'install',
-        message: 'Please tell readers how to install or run your program. (Required)',
+        message: 'Please tell readers how to install or run your program. To make a list type </br> between each item. Ex: Step 1</br>Step 2 (Required)',
         validate: installInput => {
           if (installInput) {
             return true;
@@ -112,7 +112,7 @@ const readMeInfoPrompt = () => {
       {
         type: 'input',
         name: 'usage',
-        message: 'Please tell readers how to use your program and if there are any special features. (Required)',
+        message: 'Please tell readers how to use your program and if there are any special features. To make a list type </br> between each item. Ex: How 1.</br>how 2(Required)',
         validate: usageInput => {
           if (usageInput) {
             return true;
@@ -147,7 +147,7 @@ const readMeInfoPrompt = () => {
       },
 
 
-      // ** Contribution Guidelines **
+      // ** Contribution **
       {
         type: 'confirm',
         name: 'confirmContribGuide',
@@ -157,7 +157,7 @@ const readMeInfoPrompt = () => {
       {
         type: 'input',
         name: 'contribute',
-        message: 'Please tell readers how they can contribute:',
+        message: 'Please tell readers how they can contribute. To make a list type </br> between each item. Ex: Step 1.</br>Step 2',
         when: ({ confirmContribGuide }) => confirmContribGuide
       },
 
@@ -172,24 +172,25 @@ const readMeInfoPrompt = () => {
       {
         type: 'input',
         name: 'tests',
-        message: 'Please describe the tests:',
+        message: 'Please describe the tests. To make a list type </br> between each item. Ex: My test.</br>Test 2',
         when: ({ confirmTests }) => confirmTests
       },
 
 
+      // ** Resources **
       {
         type: 'confirm',
-        name: 'confirmCredit',
+        name: 'confirmResource',
         message: "Would you like to add a list of resources?",
         default: true
       },
       {
         type: 'input',
-        name: 'credits',
+        name: 'resources',
         message: 'Provide the names or URLs of your collaborators, thrid-party assets, tutorials or website useds. To make a list type </br> between each item. Ex: My tutorial.</br>John Doe',
-        when: ({ confirmCredit }) => confirmCredit,
-        validate: creditUrlInput => {
-          if (creditUrlInput) {
+        when: ({ confirmResource }) => confirmResource,
+        validate: resourcesInput => {
+          if (resourcesInput) {
             return true;
           } else {
             console.log('Please enter a resource.');
@@ -198,12 +199,13 @@ const readMeInfoPrompt = () => {
         }
       },
 
+
       // ** License **
       {
         type: 'list',
         name: 'license',
         message: 'Pick ONE license.',
-        choices: ['GNU GPL 3.0', 'GNU LGPL 3.0', 'Mozilla Public 2.0', 'Apache 2.0', 'MIT', 'Boost Software 1.0', 'The Unlicense']
+        choices: ['GNU GPL 3.0', 'GNU LGPL 3.0', 'Mozilla Public 2.0', 'Apache 2.0', 'MIT', 'Boost Software 1.0', 'The Unlicense', 'None']
       }
     ])
     .then(data => {
@@ -227,6 +229,20 @@ readMeInfoPrompt()
 
 
 
+
+  // ### **License**
+  // ***
+  // Copyright (c) ${data.name}. Licensed under the [${generateLicense(data.license)}](https://choosealicense.com/licenses) license.
+  
+  // &nbsp;
+//   return `
+// ### **License**
+// ***
+// Copyright (c) ${name}. Licensed under the [${license}](https://choosealicense.com/licenses) license.
+
+// &nbsp;
+  
+// `;
 
 // ************ Draft of adding Resource/Credits URLs Starts  **********/
 // ** Add Resources URLs  */
