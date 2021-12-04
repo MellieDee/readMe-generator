@@ -126,6 +126,29 @@ const readMeInfoPrompt = () => {
       },
 
 
+      // ** URL if applicable
+      {
+        type: 'confirm',
+        name: 'confirmUrl',
+        message: 'Does your project have a deployment URL?',
+        default: true
+      },
+      {
+        type: 'input',
+        name: 'url',
+        message: 'Enter the URL to your project.',
+        when: ({ confirmUrl }) => confirmUrl,
+        validate: urlInput => {
+          if (urlInput) {
+            return true;
+          } else {
+            console.log("Want folks to use this? Then tell give them the URL!");
+            return false;
+          }
+        }
+      },
+
+
       // ** Contribution Guidelines **
       {
         type: 'confirm',
@@ -167,6 +190,32 @@ const readMeInfoPrompt = () => {
       return data;
     })
 };
+
+
+
+// ** Running the app
+readMeInfoPrompt()
+  .then(data => {
+    return generateReadMeTemp(data)
+  })
+  .then(readMe => {
+    return writeFile(readMe)
+  })
+  .catch(err => {
+    console.log(err);
+  });
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // ************ Draft of adding Resource/Credits URLs Starts  **********/
@@ -220,9 +269,6 @@ const readMeInfoPrompt = () => {
 //     });
 // }
 
-
-
-
 //** Running both functions */
 // readMeInfoPrompt()
 //   .then(creditsInfoPrompt)
@@ -238,17 +284,6 @@ const readMeInfoPrompt = () => {
 // ************ Draft of adding Resource/Credits URLs Ends  **********/
 
 
-// ** Running the app
-readMeInfoPrompt()
-.then(data => {
-      return generateReadMeTemp(data)
-    })
-    .then(readMe => {
-      return writeFile(readMe)
-    })
-    .catch(err => {
-      console.log(err);
-    });
 
 
 
@@ -262,7 +297,7 @@ readMeInfoPrompt()
 
 
 
-
+//  ********************  CODING OUTTAKES AND  NOTES  ******************
 // //*********** expressions in TL
 // const age = 19
 // const message = `You can ${age < 21 ? 'not' : ''} view this page`
@@ -284,12 +319,6 @@ readMeInfoPrompt()
     //     return licenseUrl
     //   }
     // })
-
-
-
-
-
-    
 
 // // TODO: Create a function to initialize app
 // function init() { }

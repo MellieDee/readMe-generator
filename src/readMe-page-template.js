@@ -1,15 +1,13 @@
+const generateProjectUrl = projectUrl => {
+  if (!projectUrl) {
+    return 'Does not have a deployment URL.'
+  }
+  return `
+  ${projectUrl}
+`;
+}
 
-//** Draft of adding Resource/Credits URLs ** */
-// const generateCredits = (creditsData) => {
-//   if (!creditsData) {
-//     return '';
-//   } else {
-//     for (let i = 0; i < creditsData.length; i++)
-//       return `
-// ${creditsData.creditUrl}
-// `;
-//   }
-// };
+
 const generateContribute = contribute => {
   if (!contribute) {
     return 'Not accepting contributors.';
@@ -28,23 +26,6 @@ const generateTests = tests => {
   `;
 };
 
-// const generateResources = (creditsData.res) => {
-//   if (!creditsData) {
-//     return 'No resources used.';
-//   } 
-//   // for (let i = 0; i < (creditsData.resources).length; i++) {
-//   //   const url = (creditsData.resources)[i];
-//   // return `
-//   //   ${url}
-//   // `;
-
-
-//   }
-// }
-
-
-
-
 
 const generateReadMeTemp = (data) => {
   return `
@@ -54,11 +35,12 @@ const generateReadMeTemp = (data) => {
 <img src="https://img.shields.io/badge/license-${data.license.replace(/ /g, "_")}-blue.svg">
 
 &nbsp;
-***
+
  
 ## **Project Description**
- ${data.description}
 ***
+ ${data.description}
+
 
 &nbsp;
 
@@ -66,6 +48,7 @@ const generateReadMeTemp = (data) => {
 ***
 * [Installation](#installation)
 * [Usage](#usage)
+* [URL](#url)
 * [Contributing](#contributing)
 * [Tests](#tests)
 * [Questions](#questions)
@@ -87,7 +70,9 @@ ${data.usage}
 
 &nbsp;
 
-
+## **URL**
+***
+Run my code at: ${generateProjectUrl(data.url)}
 
 ### **Contributing**
 ***
@@ -117,6 +102,19 @@ Copyright (c) ${data.name}. Licensed under the [${data.license}](https://choosea
 
 &nbsp;
 
+
+##### Return to:
+***
+* [Installation](#installation)
+* [Usage](#usage)
+* [URL](#url)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
+* [License](#license)
+
+&nbsp;
+
 `;
 }
 
@@ -126,6 +124,35 @@ module.exports = generateReadMeTemp
 
 
 //*******  DRAFT FUNCITONS ****** */
+
+//** Draft of adding Resource/Credits URLs ** */
+// const generateCredits = (creditsData) => {
+//   if (!creditsData) {
+//     return '';
+//   } else {
+//     for (let i = 0; i < creditsData.length; i++)
+//       return `
+// ${creditsData.creditUrl}
+// `;
+//   }
+// };
+
+// const generateResources = (creditsData.res) => {
+//   if (!creditsData) {
+//     return 'No resources used.';
+//   } 
+//   // for (let i = 0; i < (creditsData.resources).length; i++) {
+//   //   const url = (creditsData.resources)[i];
+//   // return `
+//   //   ${url}
+//   // `;
+
+
+//   }
+// }
+
+
+
 //Licensed under [${data.license}](https://choosealicense.com/licenses/${data.license.toLowerCase().replace(/ /g, "-")}/) license.
 
 
