@@ -26,6 +26,18 @@ const generateTests = tests => {
 };
 
 
+// const generateCredits = (creditsArray) => {
+//   if (!creditsDataArray) {
+//     return '';
+//   } else {
+// return `for (let i = 0; i < creditsArray.length; i++)
+// ${creditsArray[i]}
+// `;
+// };
+// };
+
+
+
 const generateReadMeTemp = (data) => {
   return `
 # **${data.title}**
@@ -48,7 +60,8 @@ ${data.description}
 * [Usage](#usage)
 * [URL](#url)
 * [Contributing](#contributing)
-* [Tests](#tests) * [Questions](#questions)
+* [Tests](#tests) 
+* [Questions](#questions)
 * [License](#license)
 
 &nbsp;
@@ -88,6 +101,12 @@ ${generateTests(data.tests)}
 
 &nbsp;
 
+### **Credits and Resources Used or Inspired By**
+***
+${data.credits}
+
+&nbsp;
+
 
 ### **Questions**
 ***
@@ -122,3 +141,13 @@ Copyright (c) ${data.name}. Licensed under the [${data.license}](https://choosea
 }
 
 module.exports = generateReadMeTemp
+
+
+// ## **Screenshot**
+// ***
+//   <img src=".${data.ssPath}" width="${data.width}" height="${data.height}" alt="${data.alt}">
+
+//   &nbsp;
+
+// //** Draft of adding Resource/Credits URLs ** */
+

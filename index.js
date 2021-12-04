@@ -5,6 +5,7 @@
 const inquirer = require('inquirer');
 const { writeFile } = require('./utils/generateMarkdown.js');
 const generateReadMeTemp = require('./src/readMe-page-template.js');
+const generateCredits = require('./src/readMe-page-template.js');
 
 
 
@@ -13,10 +14,6 @@ const generateReadMeTemp = require('./src/readMe-page-template.js');
 // ask user infor for sections of readMe - readMEInfoPrompt() in index.js collect as []
 
 const readMeInfoPrompt = () => {
-  // if (!readMeData.reponses) {
-  //   readMeData.responses [];
-  // }
-  //  return readMeData
   return inquirer
     .prompt([
       // ** Name **
@@ -149,7 +146,6 @@ const readMeInfoPrompt = () => {
         }
       },
 
-   
 
       // ** Contribution Guidelines **
       {
@@ -180,7 +176,28 @@ const readMeInfoPrompt = () => {
         when: ({ confirmTests }) => confirmTests
       },
 
-      
+
+      {
+        type: 'confirm',
+        name: 'confirmCredit',
+        message: "Would you like to add a list of resources?",
+        default: true
+      },
+      {
+        type: 'input',
+        name: 'credits',
+        message: 'Provide the names or URLs of your collaborators, thrid-party assets, tutorials or website useds. To make a list type </br> between each item. Ex: My tutorial.</br>John Doe',
+        when: ({ confirmCredit }) => confirmCredit,
+        validate: creditUrlInput => {
+          if (creditUrlInput) {
+            return true;
+          } else {
+            console.log('Please enter a resource.');
+            return false;
+          }
+        }
+      },
+
       // ** License **
       {
         type: 'list',
@@ -195,7 +212,6 @@ const readMeInfoPrompt = () => {
 };
 
 
-
 // ** Running the app
 readMeInfoPrompt()
   .then(data => {
@@ -207,15 +223,6 @@ readMeInfoPrompt()
   .catch(err => {
     console.log(err);
   });
-
-
-
-
-
-
-
-
-
 
 
 
@@ -252,30 +259,31 @@ readMeInfoPrompt()
 //         }
 //       },
 
-//       // {
-//       //   type: 'confirm',
-//       //   name: 'confirmAddCredit',
-//       //   message: 'Would you like to enter another resource?',
-//       //   default: false
-//       // }
+//       {
+//         type: 'confirm',
+//         name: 'confirmAddCredit',
+//         message: 'Would you like to enter another resource?',
+//         default: false
+//       }
 //     ])
-//     // .then(resourcesData => {
-//     //   creditsData.array.push(resourcesData);
-//     //   if (resourcesData.confirmAddCredit) {
-//     //     return creditsInfoPrompt(creditsData);
-//     //   } else {
-//     //     return creditsData;
-//     //   }
 
-//     .then(creditsData => {
-//       return creditsData;
-//     });
+//     .then(resourcesData => {
+//       creditsData.array.push(resourcesData);
+//       if (resourcesData.confirmAddCredit) {
+//         return creditsInfoPrompt(creditsData);
+//       } else {
+//         return creditsData;
+//       }
+//       });
 // }
 
-//** Running both functions */
+// //** Running both functions */
 // readMeInfoPrompt()
 //   .then(creditsInfoPrompt)
-//   .then(data => {
+//   .then(creditsData => {
+//     return generateCredits(creditsData.array)
+//   })
+//   .then(data  => {
 //     return generateReadMeTemp(data)
 //   })
 //   .then(readMe => {
@@ -283,7 +291,7 @@ readMeInfoPrompt()
 //   })
 //   .catch(err => {
 //     console.log(err);
-  //});
+//   });
 // ************ Draft of adding Resource/Credits URLs Ends  **********/
 
 
