@@ -3,8 +3,9 @@
 //Packages Used
 // const fs = require('fs');
 const inquirer = require('inquirer');
-const generateReadMeTemp = require('./src/readMe-page-template');
-const { writeFile } = require('./utils/generateMarkdown');
+const { writeFile } = require('./utils/generateMarkdown.js');
+const generateReadMeTemp = require('./src/readMe-page-template.js');
+
 
 
 // TODO: Create an array of questions for user input
@@ -126,7 +127,7 @@ const readMeInfoPrompt = () => {
       },
 
 
-      // ** URL if applicable
+      // ** URL if applicable **
       {
         type: 'confirm',
         name: 'confirmUrl',
@@ -148,6 +149,7 @@ const readMeInfoPrompt = () => {
         }
       },
 
+   
 
       // ** Contribution Guidelines **
       {
@@ -178,6 +180,7 @@ const readMeInfoPrompt = () => {
         when: ({ confirmTests }) => confirmTests
       },
 
+      
       // ** License **
       {
         type: 'list',
@@ -287,7 +290,46 @@ readMeInfoPrompt()
 
 
 
-
+  //  //** DRAFT OF Screenshot  CODE Starts  *******
+  //  {
+  //   type: 'confirm',
+  //   name: 'confirmSs',
+  //   message: 'Do you have a screenshot for your project?',
+  //   default: true
+  // },
+  // {
+  //   type: 'input',
+  //   name: 'ssPath',
+  //   message: 'Enter the relative path to your image (Ex: ./assets/images/screenShot.png):',
+  //   when: ({ confirmSs }) => confirmSs,
+  //   validate: ssPathInput => {
+  //     if (ssPathInput) {
+  //       return true;
+  //     } else {
+  //       console.log("Enter the RELATIVE path!");
+  //       return false;
+  //     }
+  //   }
+  // },
+  // {
+  //   type: 'input',
+  //   name: 'width',
+  //   message: 'Enter the width (px) of your image. (Ex: 200)',
+  //   when: ({ confirmSs }) => confirmSs,
+  // },
+  // {
+  //   type: 'input',
+  //   name: 'height',
+  //   message: 'Enter the height (px) of your image. (Ex: 375)',
+  //   when: ({ confirmSs }) => confirmSs,
+  // },
+  // {
+  //   type: 'input',
+  //   name: 'alt',
+  //   message: 'Enter the accessibility alternate text for your image:',
+  //   when: ({ confirmSs }) => confirmSs,
+  // },
+  // ******* DRAFT OF Screenshot  CODE Starts  *******
 
 
 

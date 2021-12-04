@@ -3,10 +3,9 @@ const generateProjectUrl = projectUrl => {
     return 'Does not have a deployment URL.'
   }
   return `
-  ${projectUrl}
+${projectUrl}
 `;
 }
-
 
 const generateContribute = contribute => {
   if (!contribute) {
@@ -30,19 +29,18 @@ const generateTests = tests => {
 const generateReadMeTemp = (data) => {
   return `
 # **${data.title}**
-
-&nbsp;
-<img src="https://img.shields.io/badge/license-${data.license.replace(/ /g, "_")}-blue.svg">
-
 &nbsp;
 
- 
+<img src="https://img.shields.io/badge/license-${data.license.replace(/ /g, " _")}-blue.svg">
+
+&nbsp;
+
 ## **Project Description**
 ***
- ${data.description}
-
+${data.description}
 
 &nbsp;
+
 
 ## Table of Contents
 ***
@@ -50,14 +48,13 @@ const generateReadMeTemp = (data) => {
 * [Usage](#usage)
 * [URL](#url)
 * [Contributing](#contributing)
-* [Tests](#tests)
-* [Questions](#questions)
+* [Tests](#tests) * [Questions](#questions)
 * [License](#license)
 
 &nbsp;
 
 
-## **Installation Instructions**
+## **Installation**
 ***
 ${data.install}
 
@@ -70,15 +67,20 @@ ${data.usage}
 
 &nbsp;
 
+
 ## **URL**
 ***
-Run my code at: ${generateProjectUrl(data.url)}
+${generateProjectUrl(data.url)}
+
+&nbsp;
+
 
 ### **Contributing**
 ***
 ${generateContribute(data.contribute)}
 
 &nbsp;
+
 
 ### **Tests**
 ***
@@ -89,11 +91,10 @@ ${generateTests(data.tests)}
 
 ### **Questions**
 ***
-Reach me directly at  ${data.email}  
-Or checkout out my GitHub profile:  [github.com/${data.githubName}](https://github.com/${data.githubName})
+Reach me directly at  ${data.email} </br>  
+Or checkout out my GitHub profile:  [github.com/${data.githubName.replace(/ /g, "")}](https://github.com/${data.githubName.replace(/ /g, "")})
 
 &nbsp;
-
 
 
 ### **License**
@@ -108,6 +109,7 @@ Copyright (c) ${data.name}. Licensed under the [${data.license}](https://choosea
 * [Installation](#installation)
 * [Usage](#usage)
 * [URL](#url)
+* [Screenshot](#screenshot)
 * [Contributing](#contributing)
 * [Tests](#tests)
 * [Questions](#questions)
@@ -115,89 +117,8 @@ Copyright (c) ${data.name}. Licensed under the [${data.license}](https://choosea
 
 &nbsp;
 
+
 `;
 }
 
 module.exports = generateReadMeTemp
-
-
-
-
-//*******  DRAFT FUNCITONS ****** */
-
-//** Draft of adding Resource/Credits URLs ** */
-// const generateCredits = (creditsData) => {
-//   if (!creditsData) {
-//     return '';
-//   } else {
-//     for (let i = 0; i < creditsData.length; i++)
-//       return `
-// ${creditsData.creditUrl}
-// `;
-//   }
-// };
-
-// const generateResources = (creditsData.res) => {
-//   if (!creditsData) {
-//     return 'No resources used.';
-//   } 
-//   // for (let i = 0; i < (creditsData.resources).length; i++) {
-//   //   const url = (creditsData.resources)[i];
-//   // return `
-//   //   ${url}
-//   // `;
-
-
-//   }
-// }
-
-
-
-//Licensed under [${data.license}](https://choosealicense.com/licenses/${data.license.toLowerCase().replace(/ /g, "-")}/) license.
-
-
-
-
-// // TODO: Create a function that returns a license badge based on which license is passed in
-// // // // If there is no license, return an empty string
-//   function renderLicenseBadge(data.license) {
-
-//  }
-
-// // // TODO: Create a function that returns the license link
-// // // If there is no license, return an empty string
-// function renderLicenseLink(data.license) {
-
-// }
-
-// // // TODO: Create a function that returns the license section of README
-// // // If there is no license, return an empty string
-//  function renderLicenseSection(data.license) {}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//************ Draft of adding Resource/Credits URLs Startss  **********/
-
-//* [Credits and Resources](#credits-and-resources)
-
-
-// ## **Credits and Resources**
-// ***
-// ####
-// People or Websites that I found helpful:
-// ${generateCredits(creditsData)}
-
-// &nbsp;
-//************ Draft of adding Resource/Credits URLs Ends  **********/
