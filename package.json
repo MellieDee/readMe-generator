@@ -1,0 +1,28 @@
+{
+  "name": "static-site",
+  "version": "1.0.0",
+  "description": "[How to create a Professional README](./readme-guide.md)",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "md",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^6.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MellieDee/readMe-generator.git"
+  },
+  "keywords": [
+    "readme"
+  ],
+  "bugs": {
+    "url": "https://github.com/MellieDee/readMe-generator/issues"
+  },
+  "homepage": "https://github.com/MellieDee/readMe-generator#readme",
+  "devDependencies": {
+    "jest": "^27.4.3"
+  }
+}
