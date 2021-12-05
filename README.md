@@ -74,7 +74,7 @@ No tests at this time.
 ### **Resources**
 ***
 
-  https://www.contributor-covenant.org/</br>https://shields.io/</br>https://choosealicense.com/</br>https://github.com/MatWilmot/pizza-order-builder</br>https://github.com/MatWilmot/pizza-order-builder/blob/master/inquirer.js</br>https://stackoverflow.com/questions/42964102/syntax-for-an-async-arrow-function</br>https://hustakin.github.io/bestpractice/adding-beautiful-badges-into-the-markdown/</br>https://www.digitalocean.com/community/tutorials/understanding-template-literals-in-javascript
+  https://www.contributor-covenant.org/</br>https://shields.io/</br>https://choosealicense.com/</br>https://github.com/MatWilmot/pizza-order-builder</br>https://github.com/MatWilmot/pizza-order-builder/blob/master/inquirer.js</br>https://stackoverflow.com/questions/42964102/syntax-for-an-async-arrow-function</br>https://hustakin.github.io/bestpractice/adding-beautiful-badges-into-the-markdown/</br>https://www.digitalocean.com/community/tutorials/understanding-template-literals-in-javascript</br>https://www.contributor-covenant.org/
   
 
 &nbsp;
