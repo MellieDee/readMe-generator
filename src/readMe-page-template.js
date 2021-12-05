@@ -1,18 +1,33 @@
 const generateProjectUrl = projectUrl => {
   if (!projectUrl) {
-    return 'Does not have a deployment URL.'
+  return 'Does not have a deployment URL.'
   }
   return `
 ${projectUrl}
 `;
+};
+
+
+const generateSS = (ssPath, width, height, alt) => {
+if (ssPath, width, height, alt) {
+return `
+<img src="${ssPath}" width="${width}" height="${height}" alt="${alt}">
+
+&nbsp;
+
+`
 }
+return `
+&nbsp
+`;
+};
 
 const generateContribute = contribute => {
   if (!contribute) {
     return 'Not accepting contributors.';
   }
   return `
-    ${contribute}
+  ${contribute}
   `;
 };
 
@@ -21,20 +36,34 @@ const generateTests = tests => {
     return 'No tests at this time.';
   }
   return `
-    ${tests}
+  ${tests}
   `;
 };
 
+const generateResources = resources => {
+  if (!resources) {
+    return 'No tests at this time.';
+  }
+  return `
+  ${resources}
+  `;
+};
 
-// const generateCredits = (creditsArray) => {
-//   if (!creditsDataArray) {
-//     return '';
-//   } else {
-// return `for (let i = 0; i < creditsArray.length; i++)
-// ${creditsArray[i]}
-// `;
-// };
-// };
+const generateLicense = (license) => {
+  if(license != "None") {
+return `
+Licensed under the [${license}](https://choosealicense.com/licenses) license.
+    
+&nbsp;
+      
+ `;
+}
+return `
+
+&nbsp;
+`;
+};
+
 
 
 
@@ -42,8 +71,7 @@ const generateReadMeTemp = (data) => {
   return `
 # **${data.title}**
 &nbsp;
-
-<img src="https://img.shields.io/badge/license-${data.license.replace(/ /g, " _")}-blue.svg">
+<img src="https://img.shields.io/badge/license-${data.license.replace(/ /g, "_")}-blue.svg">
 
 &nbsp;
 
@@ -59,8 +87,10 @@ ${data.description}
 * [Installation](#installation)
 * [Usage](#usage)
 * [URL](#url)
+* [Screenshot](#screenshot)
 * [Contributing](#contributing)
-* [Tests](#tests) 
+* [Tests](#tests)
+* [Resources](#resources)
 * [Questions](#questions)
 * [License](#license)
 
@@ -88,6 +118,11 @@ ${generateProjectUrl(data.url)}
 &nbsp;
 
 
+## **Screenshot**
+***
+${generateSS(data.ssPath, data.width, data.height, data.alt)}
+
+
 ### **Contributing**
 ***
 ${generateContribute(data.contribute)}
@@ -101,9 +136,9 @@ ${generateTests(data.tests)}
 
 &nbsp;
 
-### **Credits and Resources Used or Inspired By**
+### **Resources**
 ***
-${data.credits}
+${generateResources(data.resources)}
 
 &nbsp;
 
@@ -118,9 +153,9 @@ Or checkout out my GitHub profile:  [github.com/${data.githubName.replace(/ /g, 
 
 ### **License**
 ***
-Copyright (c) ${data.name}. Licensed under the [${data.license}](https://choosealicense.com/licenses) license.
+Copyright (c) ${data.name}. 
+${generateLicense(data.license)}
 
-&nbsp;
 
 
 ##### Return to:
@@ -131,6 +166,7 @@ Copyright (c) ${data.name}. Licensed under the [${data.license}](https://choosea
 * [Screenshot](#screenshot)
 * [Contributing](#contributing)
 * [Tests](#tests)
+* [Resources](#resources)
 * [Questions](#questions)
 * [License](#license)
 
@@ -141,13 +177,3 @@ Copyright (c) ${data.name}. Licensed under the [${data.license}](https://choosea
 }
 
 module.exports = generateReadMeTemp
-
-
-// ## **Screenshot**
-// ***
-//   <img src=".${data.ssPath}" width="${data.width}" height="${data.height}" alt="${data.alt}">
-
-//   &nbsp;
-
-// //** Draft of adding Resource/Credits URLs ** */
-
