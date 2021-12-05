@@ -36,7 +36,7 @@ Ensure you have Node installed.</br>Fork the repo.</br>Clone to local directory.
 
 ## **Usage**
 ***
-Answer the questions when prompted.</br>Hints:</br>Do not start any answer with the space bar (README.md will generate, but not correctly formatted.)</br>Use '< / br >' (without spaces) for line breaks or after the last word/character of a list item.</br>If the screenshot doesn't show, check your relative path, or try changing the number of '.' at the start.</br>To customize, delete or comment out unwanted questions in the index file and corresponding section andor function in the readMe-page-template file; add your own questions and corresponding section andor function in the readMe-page-template file.
+Answer the questions when prompted.</br>Hints:</br>Do not start any answer with the space bar (README.md will generate, but not correctly formatted.)</br>Use '< / br >' (without spaces) for line breaks or after the last word/character of a list item.</br>If the screenshot doesn't show, check your relative path, or try changing the number of '.' at the start. At this time, only one image can be added through the prompts; if you have more they are easy to add manually in the generated the README.md file.</br>To customize, delete or comment out unwanted questions in the index file and corresponding section andor function in the readMe-page-template file; add your own questions and corresponding section andor function in the readMe-page-template file.
 
 &nbsp;
 
@@ -44,6 +44,7 @@ Answer the questions when prompted.</br>Hints:</br>Do not start any answer with 
 ## **URL**
 ***
 Does not have a deployment URL.
+[README Generator run through on  YouTube](https://youtu.be/xJcX6qopbIg)
 
 &nbsp;
 
@@ -51,7 +52,19 @@ Does not have a deployment URL.
 ## **Screenshot**
 ***
 
-<img src="./assets/images/screenShot.png" width="375" height="375" alt="README generator command line inquirer prompt questions.">
+<img src="./assets/images/screenShot1.png" width="375" height="375" alt="README generator command line inquirer prompt questions.">
+
+&nbsp;
+
+<img src="./assets/images/screenShot2.png" width="375" height="375" alt="README generator command line inquirer prompt questions.">
+
+&nbsp;
+
+<img src="./assets/images/screenShot3.png" width="375" height="375" alt="README generator command line inquirer prompt questions.">
+
+&nbsp;
+
+<img src="./assets/images/screenShot4.png" width="375" height="375" alt="README generator command line inquirer prompt questions.">
 
 &nbsp;
 
