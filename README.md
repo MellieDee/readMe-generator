@@ -51,7 +51,7 @@ Does not have a deployment URL.
 ## **Screenshot**
 ***
 
-<img src="../assets/images/screenShot.png" width="375" height="375" alt="README generator command line inquirer prompt questions.">
+<img src="./assets/images/screenShot.png" width="375" height="375" alt="README generator command line inquirer prompt questions.">
 
 &nbsp;
 
