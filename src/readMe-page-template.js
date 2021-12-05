@@ -5,7 +5,22 @@ const generateProjectUrl = projectUrl => {
   return `
 ${projectUrl}
 `;
+};
+
+
+const generateSS = (ssPath, width, height, alt) => {
+if (ssPath, width, height, alt) {
+return `
+<img src="${ssPath}" width="${width}" height="${height}" alt="${alt}">
+
+&nbsp;
+
+`
 }
+return `
+&nbsp
+`;
+};
 
 const generateContribute = contribute => {
   if (!contribute) {
@@ -46,8 +61,7 @@ Licensed under the [${license}](https://choosealicense.com/licenses) license.
 return `
 
 &nbsp;
-`
-
+`;
 };
 
 
@@ -73,6 +87,7 @@ ${data.description}
 * [Installation](#installation)
 * [Usage](#usage)
 * [URL](#url)
+* [Screenshot](#screenshot)
 * [Contributing](#contributing)
 * [Tests](#tests)
 * [Resources](#resources)
@@ -101,6 +116,11 @@ ${data.usage}
 ${generateProjectUrl(data.url)}
 
 &nbsp;
+
+
+## **Screenshot**
+***
+${generateSS(data.ssPath, data.width, data.height, data.alt)}
 
 
 ### **Contributing**
@@ -143,6 +163,7 @@ ${generateLicense(data.license)}
 * [Installation](#installation)
 * [Usage](#usage)
 * [URL](#url)
+* [Screenshot](#screenshot)
 * [Contributing](#contributing)
 * [Tests](#tests)
 * [Resources](#resources)

@@ -81,7 +81,7 @@ const readMeInfoPrompt = () => {
       {
         type: 'input',
         name: 'description',
-        message: 'Please provide a description of your project or its purpose. For example, what problem does it solve and how did you solve it? (Required)',
+        message: 'Please provide a description of your project or its purpose. To make a list or add line breaks type </br> between each item. Ex: Step 1</br>Step 2  (Required)',
         validate: descriptionInput => {
           if (descriptionInput) {
             return true;
@@ -146,8 +146,74 @@ const readMeInfoPrompt = () => {
         }
       },
 
+      //** DRAFT OF Screenshot  CODE Starts  *******
+      {
+        type: 'confirm',
+        name: 'confirmSs',
+        message: 'Do you have a screenshot for your project?',
+        default: true
+      },
+      {
+        type: 'input',
+        name: 'ssPath',
+        message: 'Enter the relative path to your image (Ex: ../assets/images/screenShot.png):',
+        when: ({ confirmSs }) => confirmSs,
+        validate: ssPathInput => {
+          if (ssPathInput) {
+            return true;
+          } else {
+            console.log("Enter the RELATIVE path!");
+            return false;
+          }
+        }
+      },
+      {
+        type: 'input',
+        name: 'width',
+        message: 'Enter the width (px) of your image. (Ex: 200)',
+        when: ({ confirmSs }) => confirmSs,
+        validate: widthInput => {
+          if (widthInput) {
+            return true;
+          } else {
+            console.log("Enter the RELATIVE path!");
+            return false;
+          }
+        }
+      },
+      {
+        type: 'input',
+        name: 'height',
+        message: 'Enter the height (px) of your image. (Ex: 375)',
+        when: ({ confirmSs }) => confirmSs,
+        validate: heightInput => {
+          if (heightInput) {
+            return true;
+          } else {
+            console.log("Enter the RELATIVE path!");
+            return false;
+          }
+        }
+      },
+      {
+        type: 'input',
+        name: 'alt',
+        message: 'Enter the accessibility alternate text for your image:',
+        when: ({ confirmSs }) => confirmSs,
+        validate: altInput => {
+          if (altInput) {
+            return true;
+          } else {
+            console.log("Enter the RELATIVE path!");
+            return false;
+          }
+        }
+      },
+      // ******* DRAFT OF Screenshot  CODE Starts  *******
 
-      // ** Contribution **
+
+
+      // ** Contributing **
       {
         type: 'confirm',
         name: 'confirmContribGuide',
@@ -230,19 +296,7 @@ readMeInfoPrompt()
 
 
 
-  // ### **License**
-  // ***
-  // Copyright (c) ${data.name}. Licensed under the [${generateLicense(data.license)}](https://choosealicense.com/licenses) license.
-  
-  // &nbsp;
-//   return `
-// ### **License**
-// ***
-// Copyright (c) ${name}. Licensed under the [${license}](https://choosealicense.com/licenses) license.
 
-// &nbsp;
-  
-// `;
 
 // ************ Draft of adding Resource/Credits URLs Starts  **********/
 // ** Add Resources URLs  */
@@ -391,47 +445,3 @@ readMeInfoPrompt()
 
 // // Function call to initialize app
 // init();
-
-
-
-
-
-
-// // ** URL if applicable
-// const readMeUrlPrompt = () => {
-//   return inquirer
-//     .prompt([
-//       {
-//         type: 'confirm',
-//         name: 'confirmUrl',
-//         message: 'Does your project have a deployment URL?',
-//         default: true
-//       },
-//       {
-//         type: 'input',
-//         name: 'url',
-//         message: 'Enter the URL to your project if there is one.',
-//         when: ({ confirmUrl }) => confirmUrl
-//       },
-//     ])
-//     .then(dataB => {
-//       // readMeData.project.push(answers);
-//       // console.log(data);
-//       return dataB;
-//     })
-//   };
-
-      // // ** Credits and Resources **
-      // {
-      //   type: 'input',
-      //   name: 'contributors',
-      //   message: 'Name your collaborators, thrid-party assets, tutorials or websites used.
-      //   validate: usageInput => {
-      //     if (usageInput) {
-      //       return true;
-      //     } else {
-      //       console.log("Want folks to use this? Then tell them how!.");
-      //       return false;
-      //     }
-      //   }
-      // },
