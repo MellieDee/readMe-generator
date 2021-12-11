@@ -275,6 +275,7 @@ const readMeInfoPrompt = () => {
       }
     ])
     .then(data => {
+      console.log(data)
       return data;
     })
 };
