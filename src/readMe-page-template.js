@@ -42,7 +42,7 @@ const generateTests = tests => {
 
 const generateResources = resources => {
   if (!resources) {
-    return 'No tests at this time.';
+    return 'No resources at this time.';
   }
   return `
   ${resources}
