@@ -138,6 +138,7 @@ ${generateTests(data.tests)}
 
 ### **Resources**
 ***
+#### I Used or Was Inspired By
 ${generateResources(data.resources)}
 
 &nbsp;
