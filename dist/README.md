@@ -1,5 +1,5 @@
 
-# **Note Taker**
+# **Employee Tracker**
 &nbsp;
 <img src="https://img.shields.io/badge/license-MIT-blue.svg">
 
@@ -7,7 +7,7 @@
 
 ## **Project Description**
 ***
-Use this on-line app to jot down your to-do list, story ideas or future pet names!</br>Whatever you want to remember - write and save your note with Note-Taker.</br>
+This command-line app allows users to view, create, and update a company’s typical employee database. Upon start, the application renders a detailed menu in the command-line from which the user chooses to view or add Departments, Roles and Employees, or update employees.
 
 &nbsp;
 
@@ -29,23 +29,21 @@ Use this on-line app to jot down your to-do list, story ideas or future pet name
 
 ## **Installation**
 ***
-Clink the link in this README to access the app. It will open to a landing page; click Get Started button and your off!</br>Each note is displayed on the left.</br>Empty fields are on the right; the save button appears in teh top right, after you jot some text in the note body.</br>
+Ensure you have Node installed.</br>Fork the repo.</br>Clone to local directory.</br>Install npm package: from command line, in the main program directory, type: npm install.</br>Program runs from the index.js file: from command line, in the main program directory, type: node index. (Also uses inquirer and node fs dependencies which are called in the code.
 
 &nbsp;
 
 
 ## **Usage**
 ***
-Each note is displayed on the left.</br>Empty fields are on the right; the save button appears in teh top right, after you jot some text in the note body.</br>
+Use arrow keys to scroll up or down in the main menu.</br>Press enter to select an option.</br>Follow the prompts.</br>To exit, choose 'Exit' from the main menu or answer 'No' to the follow-up question, or on Mac control/C at any time.
 
 &nbsp;
 
 
 ## **URL**
 ***
-
-https://note-taker-mdz.herokuapp.com/
-
+Does not have a deployment URL.
 
 &nbsp;
 
@@ -53,7 +51,7 @@ https://note-taker-mdz.herokuapp.com/
 ## **Screenshot**
 ***
 
-<img src="../assets/images/screenShot.png" width="375" height="375" alt="Note Taker text fields to enter notes.">
+<img src="../assets/images/screenShot.png" width="350" height="275" alt="Opening screen for command-line project showing the main choices menu.">
 
 &nbsp;
 
@@ -75,7 +73,10 @@ No tests at this time.
 
 ### **Resources**
 ***
-No tests at this time.
+#### I Used or Was Inspired By
+
+  list
+  
 
 &nbsp;
 
@@ -83,14 +84,14 @@ No tests at this time.
 ### **Questions**
 ***
 Reach me directly at  mongabay00@outlook.com </br>  
-Or checkout out my GitHub profile:  [github.com/melliedee](https://github.com/melliedee)
+Or checkout out my GitHub profile:  [github.com/MellieDee](https://github.com/MellieDee)
 
 &nbsp;
 
 
 ### **License**
 ***
-Copyright (c) Mellie Dee. 
+Copyright (c) Melanie Dubberley. 
 
 Licensed under the [MIT](https://choosealicense.com/licenses) license.
     

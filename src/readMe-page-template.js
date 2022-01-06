@@ -1,6 +1,6 @@
 const generateProjectUrl = projectUrl => {
   if (!projectUrl) {
-  return 'Does not have a deployment URL.'
+    return 'Does not have a deployment URL.'
   }
   return `
 ${projectUrl}
@@ -9,15 +9,15 @@ ${projectUrl}
 
 
 const generateSS = (ssPath, width, height, alt) => {
-if (ssPath, width, height, alt) {
-return `
+  if (ssPath, width, height, alt) {
+    return `
 <img src="${ssPath}" width="${width}" height="${height}" alt="${alt}">
 
 &nbsp;
 
 `
-}
-return `
+  }
+  return `
 &nbsp
 `;
 };
@@ -50,15 +50,15 @@ const generateResources = resources => {
 };
 
 const generateLicense = (license) => {
-  if(license != "None") {
-return `
+  if (license != "None") {
+    return `
 Licensed under the [${license}](https://choosealicense.com/licenses) license.
     
 &nbsp;
       
  `;
-}
-return `
+  }
+  return `
 
 &nbsp;
 `;
@@ -114,6 +114,7 @@ ${data.usage}
 ## **URL**
 ***
 ${generateProjectUrl(data.url)}
+
 
 &nbsp;
 

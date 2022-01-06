@@ -1,5 +1,3 @@
-//TODO: Include packages needed for this application
-
 //Packages Used
 // const fs = require('fs');
 const inquirer = require('inquirer');
